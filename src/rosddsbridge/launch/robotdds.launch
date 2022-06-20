@@ -1,0 +1,38 @@
+<launch>
+<!-- client other ip -->
+   <node pkg="rosddsbridge" type="ros2dds" name="ros2dds" launch-prefix="xterm -e" respawn="true" output="screen">
+		<param name="wan_ip"  type="string"    value="192.168.1.251" />
+		<param name="port"    type="int"       value="56456" />
+		<param name="comm"    type="bool"      value="true" />
+        <param name="ros_sub_PointCloud2_topic"    value= "/velodyne_local_cloud"/>
+        <param name="ros_sub_Octomap_topic"    value= "/octomap_full"/>
+		<param name="ros_sub_image_topic"    value= "/imageYolo/compressed"/>
+		<param name="ros_sub_tf_topic"    value= "/tf"/>
+		<param name="ros_sub_twist_topic"    value= "/cmd_vel"/>
+		<param name="ros_sub_marker_topic"    value="/object2"/>
+		<param name="ros_sub_frontvideo_topic"    value= "/frontvideo/compressed"/>
+		<param name="ros_sub_backvideo_topic"    value= "/backvideo/compressed"/>
+		<param name="ros_sub_odometry_topic"    value= "/odom"/>
+		<param name="dds_pub_PointCloud2_topic"    value=   "PclTopic"/>
+		<param name="dds_pub_Octomap_topic"    value= "OctomapTopic"/>
+		<param name="dds_pub_image_topic"    value= "ImageTopic"/>
+		<param name="dds_pub_tf_topic"    value= "TfTopic"/>
+		<param name="dds_pub_twist_topic"    value=     "TwistTopic"/>
+		<param name="dds_pub_marker_topic"    value= "MarkerTopic"/>
+		<param name="dds_pub_frontvideo_topic"    value= "frontVideoTopic"/>
+		<param name="dds_pub_backvideo_topic"    value= "backVideoTopic"/>
+		<param name="dds_pub_odometry_topic"    value= "OdometryTopic"/>
+    </node>
+
+    <!--node pkg="rosddsbridge" type="vel_dds2ros" name="vel_dds2ros" launch-prefix="xterm -e" respawn="true" output="screen">
+		<param name="wan_ip"      value="192.168.1.251" />
+		<param name="port"        value="56452" />
+    </node-->
+
+    <!--node pkg="rosddsbridge" type="robotCmdSub" name="robotCmdSub" launch-prefix="xterm -e" respawn="true" output="screen">
+		<param name="wan_ip"      value="192.168.1.251" />
+		<param name="port"        value="56460" />
+    </node-->
+
+<!--node pkg="rosddsbridge" type="readCamera" name="readCamera" launch-prefix="xterm -e" respawn="true" output="screen" /-->
+</launch>

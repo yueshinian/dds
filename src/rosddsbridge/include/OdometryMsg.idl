@@ -1,0 +1,15 @@
+struct OdometryMsg
+{
+	unsigned long seq;
+	unsigned long secs;
+	unsigned long nsecs;
+	string frame_id;
+	string child_frame_id;
+	float position_x;
+	float position_y;
+	float position_z;
+	float orientation_x;
+	float orientation_y;
+	float orientation_z;
+	float orientation_w;
+}; 

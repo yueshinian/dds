@@ -1,0 +1,17 @@
+struct TestDateType
+{
+	octet a;
+	char b;
+	wchar c;
+	short d;
+	unsigned short e;
+	long f;
+	unsigned long g;
+	long long h;
+	unsigned long long i;
+	float j;
+	double k;
+	long double l;
+	boolean m;
+	sequence<long> n;
+}; 

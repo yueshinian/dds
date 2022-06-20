@@ -1,0 +1,6 @@
+#include "TfMsgBase.idl"
+struct	TfMsg:TfMsgBase
+{
+	sequence<TfMsgBase> tf_sequence;
+        //TfMsgBase tf_sequence[5];
+};

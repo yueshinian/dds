@@ -1,0 +1,9 @@
+struct JoyMsg
+{
+	unsigned long seq;
+	unsigned long secs;
+	unsigned long nsecs;
+	string frame_id;
+	sequence<float> axes;
+	sequence<long> buttons;
+}; 

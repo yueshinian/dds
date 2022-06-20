@@ -1,0 +1,5 @@
+struct CmdMsg
+{
+	unsigned long long index;
+	string str;
+}; 

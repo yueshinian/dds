@@ -1,0 +1,25 @@
+struct MarkerMsg
+{
+	unsigned long seq;
+	unsigned long secs;
+	unsigned long nsecs;
+	string frame_id;
+	string ns;
+	long id;
+	long type;
+	long action;
+	float position_x;
+	float position_y;
+	float position_z;
+	float orientation_x;
+	float orientation_y;
+	float orientation_z;
+	float orientation_w;
+	float scale_x;
+	float scale_y;
+	float scale_z;
+	float color_r;
+	float color_g;
+	float color_b;
+	float color_a;		
+};

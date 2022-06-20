@@ -1,0 +1,28 @@
+<launch>
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find rosddsbridge)/rviz/receive.rviz" />
+    
+    <!--- TF -->
+    <node pkg="tf" type="static_transform_publisher" name="camera_init_to_map"  args="0 0 0 1.570795   0        1.570795 /map    /camera_init 10" />
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera" args="0 0 0 -1.570795 -1.570795 0        /camera /base_link   10" />
+    <!--node pkg="tf" type="static_transform_publisher" name="odom_to_map" args="0 0 0 0 0 0 /map /odom   100" /-->
+    
+   <!-- server own ip -->
+    <node pkg="rosddsbridge" type="dds2ros" name="dds2ros"  launch-prefix="xterm -e" respawn="true" >
+		<param name="wan_ip"      value="192.168.1.251" />
+		<param name="port"        value="56456" />
+    </node>
+    <!-- client other ip -->
+    <!--node pkg="rosddsbridge" type="vel_ros2dds" name="vel_ros2dds"  respawn="true">
+		<param name="wan_ip"      value="192.168.1.105" />
+		<param name="port"        value="56452" />
+    </node-->
+
+    <!--node pkg="rosddsbridge" type="pcCmdPub" name="pcCmdPub" launch-prefix="xterm -e" respawn="true" output="screen">
+		<param name="wan_ip"      value="192.168.1.172" />
+		<param name="port"        value="56460" />
+    </node-->
+
+    <!--node pkg="rosddsbridge" type="visualizationDDS" name="visualizationDDS"  respawn="true" /-->
+    <node pkg="rosddsbridge" type="floam_laser_mapping_node" name="floam_laser_mapping_nodeDDS"  respawn="true" />
+ 
+</launch>

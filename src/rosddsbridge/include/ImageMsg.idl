@@ -1,0 +1,16 @@
+struct ImageMsg
+{
+	unsigned long seq;
+	double secs;
+	float nsecs;
+	string frame_id;
+	//unsigned long height;
+	//unsigned long width;
+	//string encoding;
+	//octet is_bigendian;
+	//unsigned long step;
+	string format;
+	unsigned long datacount;
+	//char data[100000];
+	sequence<char> data;
+}; 

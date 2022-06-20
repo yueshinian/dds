@@ -1,0 +1,13 @@
+struct OctomapMsg
+{
+	unsigned long seq;
+	unsigned long secs;
+	unsigned long nsecs;
+	string frame_id;
+	boolean binary;
+	string id;
+	double resolution;
+	unsigned long datacount;
+	sequence<char> data;
+	//char data[200000];
+}; 

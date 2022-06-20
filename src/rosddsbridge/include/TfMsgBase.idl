@@ -1,0 +1,15 @@
+struct TfMsgBase
+{
+	unsigned long seq;
+	unsigned long secs;
+	unsigned long nsecs;
+	string frame_id;
+	string child_frame_id;
+	float translation_x;
+	float translation_y;
+	float translation_z;
+	float rotation_x;
+	float rotation_y;
+	float rotation_z;
+	float rotation_w;
+}; 

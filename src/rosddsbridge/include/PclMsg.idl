@@ -1,0 +1,20 @@
+struct PclMsg
+{
+	unsigned long seq;
+	unsigned long secs;
+	unsigned long nsecs;
+	string frame_id;
+	unsigned long height;
+	unsigned long width;
+	string PointFileds_name[4];
+	unsigned long PointFileds_offset[4];
+	octet PointFileds_datatype[4];
+	unsigned long PointFileds_count[4];
+	boolean is_bigendian;
+	unsigned long point_step;
+	unsigned long row_step;
+	unsigned long datacount;
+	sequence<char> data;
+	//char data[100000];
+	boolean is_dense;
+}; 

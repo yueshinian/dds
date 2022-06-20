@@ -1,0 +1,64 @@
+<launch>
+<!-- client other ip -->
+   <!--node pkg="rosddsbridge" type="robotMapPub" name="robotMapPub" launch-prefix="xterm -e" respawn="true" output="screen">
+		<param name="wan_ip"  type="string"    value="192.168.1.122" />
+		<param name="port"    type="int"       value="56456" />
+		<param name="comm"    type="bool"      value="true" />
+        <param name="ros_sub_PointCloud2_topic"    value= "/laser_cloud_surround"/>
+		<param name="dds_pub_PointCloud2_topic"    value=   "MapPclTopic"/>
+    </node>
+
+	<node pkg="rosddsbridge" type="robotOdomPub" name="robotOdomPub" launch-prefix="xterm -e" respawn="true" output="screen">
+		<param name="wan_ip"  type="string"    value="192.168.1.122" />
+		<param name="port"    type="int"       value="56458" />
+		<param name="comm"    type="bool"      value="true" />
+		<param name="ros_sub_odometry_topic"    value= "/state_estimation"/>
+		<param name="dds_pub_odometry_topic"    value= "OdometryTopic"/>
+    </node-->
+
+	<!--node pkg="rosddsbridge" type="robotVelodynePub" name="robotVelodynePub" launch-prefix="xterm -e" respawn="true" output="screen">
+		<param name="wan_ip"  type="string"    value="192.168.1.122" />
+		<param name="port"    type="int"       value="56460" />
+		<param name="comm"    type="bool"      value="true" />
+        <param name="ros_sub_PointCloud2_topic"    value= "/registered_scan"/>
+		<param name="dds_pub_PointCloud2_topic"    value=   "VelodynePclTopic"/>
+    </node-->
+
+	<!--node pkg="rosddsbridge" type="robotVelodyneWithOdometry" name="robotVelodyneWithOdometry" launch-prefix="xterm -e" respawn="true" output="screen">
+		<param name="wan_ip"  type="string"    value="192.168.1.122" />
+		<param name="port"    type="int"       value="56460" />
+		<param name="comm"    type="bool"      value="true" />
+        <param name="ros_sub_PointCloud2_topic"    value= "/velodyne_points"/>
+		<param name="ros_sub_odometry_topic"    value= "/integrated_to_init"/>
+		<param name="dds_pub_PointCloud2WithOdom_topic"    value=   "PclWithOdomTopic"/>
+    </node>
+
+	<node pkg="rosddsbridge" type="robotImagePub" name="robotImagePub" launch-prefix="xterm -e" respawn="true" output="screen">
+		<param name="wan_ip"  type="string"    value="192.168.1.122" />
+		<param name="port"    type="int"       value="56460" />
+		<param name="comm"    type="bool"      value="true" />
+        <param name="ros_sub_image1_topic"    value= "/image/compressed"/>
+		<param name="ros_sub_image2_topic"    value= "/image/compressed"/>
+		<param name="dds_pub_image1_topic"    value=   "ImageTopic1"/>
+		<param name="dds_pub_image2_topic"    value=   "ImageTopic2"/>
+    </node>
+
+	<node pkg="rosddsbridge" type="robotMeasurePub" name="robotMeasurePub" launch-prefix="xterm -e" respawn="true" output="screen">
+		<param name="wan_ip"  type="string"    value="192.168.1.122" />
+		<param name="port"    type="int"       value="56460" />
+		<param name="comm"    type="bool"      value="true" />
+        <param name="ros_sub_PointCloud2_topic"    value= "/velodyne_points"/>
+		<param name="ros_sub_Dis_topic"    value= "/ros_sub_Dis_topic"/>
+		<param name="dds_pub_Measure_topic"    value=   "MeasureTopic"/>
+    </node-->
+
+	<node pkg="rosddsbridge" type="robotVelodyneWithOdometry2" name="robotVelodyneWithOdometry2" launch-prefix="xterm -e" respawn="true" output="screen">
+		<param name="wan_ip"  type="string"    value="192.168.1.122" />
+		<param name="port"    type="int"       value="56460" />
+		<param name="comm"    type="bool"      value="true" />
+        <param name="ros_sub_PointCloud2_topic"    value= "/velodyne_points"/>
+		<param name="ros_sub_odometry_topic"    value= "/integrated_to_init"/>
+		<param name="dds_pub_PointCloud2WithOdom_topic"    value=   "PclWithOdomTopic2"/>
+    </node>
+
+</launch>

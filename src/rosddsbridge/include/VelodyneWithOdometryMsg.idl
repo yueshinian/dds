@@ -1,0 +1,8 @@
+#include "OdometryMsg.idl"
+#include "PclMsg.idl"
+struct VelodyneWithOdometryMsg
+{
+	OdometryMsg odometry;
+	PclMsg pcl;
+}; 
+
